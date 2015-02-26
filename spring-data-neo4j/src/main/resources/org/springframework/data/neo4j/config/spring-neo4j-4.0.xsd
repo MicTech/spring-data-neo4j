@@ -18,10 +18,17 @@
         <xsd:complexType>
             <xsd:complexContent>
                 <xsd:extension base="beans:identifiedType">
-                    <xsd:attribute name="storeDirectory" type="xsd:string">
+                    <xsd:attribute name="hostName" type="xsd:string">
                         <xsd:annotation>
                             <xsd:documentation>
-                                default store-directory of the Neo4j database
+                                The host to connect to a Neo4j server. Default is localhost.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="port" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                The port to connect to Neo4j server. Default is 7474.
                             </xsd:documentation>
                         </xsd:annotation>
                     </xsd:attribute>
