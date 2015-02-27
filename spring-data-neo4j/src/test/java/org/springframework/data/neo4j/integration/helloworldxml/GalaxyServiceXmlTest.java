@@ -1,11 +1,11 @@
-package org.springframework.data.neo4j.integration.helloworld;
+package org.springframework.data.neo4j.integration.helloworldxml;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.neo4j.integration.helloworld.domain.World;
-import org.springframework.data.neo4j.integration.helloworld.service.GalaxyService;
+import org.springframework.data.neo4j.integration.helloworldxml.domain.World;
+import org.springframework.data.neo4j.integration.helloworldxml.service.GalaxyService;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
