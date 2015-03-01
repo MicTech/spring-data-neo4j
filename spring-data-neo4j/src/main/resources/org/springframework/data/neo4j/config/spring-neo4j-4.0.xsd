@@ -18,40 +18,19 @@
         <xsd:complexType>
             <xsd:complexContent>
                 <xsd:extension base="beans:identifiedType">
-                    <xsd:attribute name="hostName" type="xsd:string">
+                    <xsd:attribute name="neo4j-server-ref" type="neo4jServerRef"/>
+                    <xsd:attribute name="neo4j-server-url" type="xsd:string">
                         <xsd:annotation>
                             <xsd:documentation>
-                                The host to connect to a Neo4j server. Default is localhost.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:attribute>
-                    <xsd:attribute name="port" type="xsd:string">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                The port to connect to Neo4j server. Default is 7474.
+                                Neo4j Server URL.
                             </xsd:documentation>
                         </xsd:annotation>
                     </xsd:attribute>
 
-                    <xsd:attribute name="graphDatabaseService" type="graphDatabaseServiceRef" />
                     <xsd:attribute name="base-package" type="xsd:string" use="required">
                         <xsd:annotation>
                             <xsd:documentation>
                                 comma separated base package(s) for persistent entities.
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:attribute>
-                    <xsd:attribute name="entityManagerFactory" type="xsd:string" use="optional">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                entity manager factory bean reference for cross-store configuration
-                            </xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:attribute>
-                    <xsd:attribute name="create-index" type="xsd:boolean" use="optional" default="true">
-                        <xsd:annotation>
-                            <xsd:documentation>
-                                decides if schema and legacy indexes are created upfront for this application, defaults to true
                             </xsd:documentation>
                         </xsd:annotation>
                     </xsd:attribute>
@@ -71,60 +50,22 @@
         </xsd:complexType>
     </xsd:element>
 
-    <xsd:element name="auditing">
+    <xsd:simpleType name="neo4jServerRef">
         <xsd:annotation>
             <xsd:appinfo>
-                <tool:annotation>
-                    <tool:exports type="org.springframework.data.neo4j.lifecycle.AuditingEventListener" />
-                    <tool:exports type="org.springframework.data.auditing.IsNewAwareAuditingHandler" />
+                <tool:annotation kind="ref">
+                    <tool:assignable-to type="org.springframework.data.neo4j.server.Neo4jServer"/>
                 </tool:annotation>
             </xsd:appinfo>
         </xsd:annotation>
-        <xsd:complexType>
-            <xsd:attributeGroup ref="repository:auditing-attributes" />
-            <xsd:attribute name="neo4jTemplate" type="mappingContextRef" />
-        </xsd:complexType>
-    </xsd:element>
-
+        <xsd:union memberTypes="xsd:string"/>
+    </xsd:simpleType>
 
     <xsd:simpleType name="neo4jTemplateRef">
         <xsd:annotation>
             <xsd:appinfo>
                 <tool:annotation kind="ref">
                     <tool:assignable-to type="org.springframework.data.neo4j.support.Neo4jTemplate"/>
-                </tool:annotation>
-            </xsd:appinfo>
-        </xsd:annotation>
-        <xsd:union memberTypes="xsd:string"/>
-    </xsd:simpleType>
-
-    <xsd:simpleType name="mappingContextRef">
-        <xsd:annotation>
-            <xsd:appinfo>
-                <tool:annotation kind="ref">
-                    <tool:assignable-to type="org.springframework.data.mapping.context.MappingContext"/>
-                </tool:annotation>
-            </xsd:appinfo>
-        </xsd:annotation>
-        <xsd:union memberTypes="xsd:string"/>
-    </xsd:simpleType>
-
-    <xsd:simpleType name="graphDatabaseServiceRef">
-        <xsd:annotation>
-            <xsd:appinfo>
-                <tool:annotation kind="ref">
-                    <tool:assignable-to type="org.neo4j.graphdb.GraphDatabaseService"/>
-                </tool:annotation>
-            </xsd:appinfo>
-        </xsd:annotation>
-        <xsd:union memberTypes="xsd:string"/>
-    </xsd:simpleType>
-
-    <xsd:simpleType name="entityManagerFactoryRef">
-        <xsd:annotation>
-            <xsd:appinfo>
-                <tool:annotation kind="ref">
-                    <tool:assignable-to type="org.springframework.orm.jpa.AbstractEntityManagerFactoryBean"/>
                 </tool:annotation>
             </xsd:appinfo>
         </xsd:annotation>

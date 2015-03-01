@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.neo4j.integration.helloworldxml.domain.World;
 import org.springframework.data.neo4j.integration.helloworldxml.service.GalaxyService;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,10 +16,9 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
 
-@ContextConfiguration(locations = "classpath:test-config.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class GalaxyServiceXmlTest {
+public abstract class BaseGalaxyServiceXmlTest {
 
     @Autowired
     private GalaxyService galaxyService;
