@@ -21,6 +21,7 @@ import java.io.InputStream;
 public interface ClassFileProcessor {
 
     void process(InputStream inputStream) throws IOException;
+    void validate();
     void finish();
 
 }

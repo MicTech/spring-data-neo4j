@@ -159,7 +159,7 @@ public class ClassInfo {
         return className.substring(className.lastIndexOf('.') + 1);
     }
 
-    ClassInfo directSuperclass() {
+    public ClassInfo directSuperclass() {
         return directSuperclass;
     }
 
