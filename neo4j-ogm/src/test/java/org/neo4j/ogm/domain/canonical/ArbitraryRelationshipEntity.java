@@ -12,7 +12,9 @@
 
 package org.neo4j.ogm.domain.canonical;
 
+import org.neo4j.ogm.annotation.EndNode;
 import org.neo4j.ogm.annotation.RelationshipEntity;
+import org.neo4j.ogm.annotation.StartNode;
 
 /**
  * NB: this isn't actually used to save anything at the time of writing; it's just so we can test meta-data resolution for
@@ -24,5 +26,19 @@ import org.neo4j.ogm.annotation.RelationshipEntity;
 public class ArbitraryRelationshipEntity {
 
     // nothing here yet
+    @StartNode
+    Start start;
 
+    @EndNode
+    End end;
+
+    public static class Start {
+        Long id;
+        String name;
+    }
+
+    public static class End {
+        Long id;
+        String name;
+    }
 }
