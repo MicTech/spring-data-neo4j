@@ -150,6 +150,8 @@ public class DomainInfo implements ClassFileProcessor {
         for(ClassInfo classInfo : classNameToClassInfo.values()) {
             AnnotationValidator classAnnotationValidator = new ClassAnnotationValidator(classInfo);
             classAnnotationValidator.validate();
+            FieldAnnotationValidator fieldAnnotationValidator = new FieldAnnotationValidator(classInfo);
+            fieldAnnotationValidator.validate();
         }
     }
 
