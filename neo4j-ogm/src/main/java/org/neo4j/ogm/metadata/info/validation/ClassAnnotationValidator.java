@@ -15,13 +15,7 @@ public class ClassAnnotationValidator implements AnnotationValidator {
                                          "Class could not be NodeEntity and Transient at the same time"));
     }};
 
-    private ClassInfo classInfo;
-
-    public ClassAnnotationValidator(ClassInfo classInfo) {
-        this.classInfo = classInfo;
-    }
-
-    public void validate() {
+    public void validate(ClassInfo classInfo) {
         Collection<AnnotationInfo> classesAnnotations = getAnnotationsForClassAndAncestors(classInfo);
 
         AnnotationValidatorHelper helper = new AnnotationValidatorHelper();

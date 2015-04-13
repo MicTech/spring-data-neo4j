@@ -20,9 +20,9 @@ public class ClassAnnotationValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.inheritance");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.inheritance.User.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 
     @Test
@@ -32,8 +32,8 @@ public class ClassAnnotationValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.persistence");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.persistence.User.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 }

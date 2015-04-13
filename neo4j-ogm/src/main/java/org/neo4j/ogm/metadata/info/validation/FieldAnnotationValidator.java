@@ -14,13 +14,7 @@ public class FieldAnnotationValidator implements AnnotationValidator {
                                          "%s - Is not possible to have StartNode and EndNode as one field on the object"));
     }};
 
-    private ClassInfo classInfo;
-
-    public FieldAnnotationValidator(ClassInfo classInfo) {
-        this.classInfo = classInfo;
-    }
-
-    public void validate() {
+    public void validate(ClassInfo classInfo) {
         FieldsInfo fieldsInfo = classInfo.fieldsInfo();
 
         for(FieldInfo fieldAnnotation : fieldsInfo.fields()) {

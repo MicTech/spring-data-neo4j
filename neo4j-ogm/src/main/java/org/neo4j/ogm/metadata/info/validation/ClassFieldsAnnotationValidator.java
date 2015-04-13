@@ -14,13 +14,7 @@ public class ClassFieldsAnnotationValidator implements AnnotationValidator {
                                         "Class with RelationShipEntity must contain Fields with StartNode and EndNode"));
     }};
 
-    private ClassInfo classInfo;
-
-    public ClassFieldsAnnotationValidator(ClassInfo classInfo) {
-        this.classInfo = classInfo;
-    }
-
-    public void validate() {
+    public void validate(ClassInfo classInfo) {
         Collection<AnnotationInfo> classAnnotations = classInfo.annotations();
         Collection<AnnotationInfo> fieldsAnnotations = getFieldsAnnotations(classInfo);
 

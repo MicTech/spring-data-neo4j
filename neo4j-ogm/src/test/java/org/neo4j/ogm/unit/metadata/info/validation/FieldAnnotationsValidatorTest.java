@@ -22,8 +22,8 @@ public class FieldAnnotationsValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.startendnode");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.startendnode.Relationship.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 }

@@ -20,9 +20,9 @@ public class ClassFieldsAnnotationValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.endnode");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.endnode.Relationship.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 
     @Test
@@ -32,9 +32,9 @@ public class ClassFieldsAnnotationValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.startnode");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.startendnode.Relationship.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 
     @Test
@@ -44,9 +44,9 @@ public class ClassFieldsAnnotationValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.relationship");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.relationship.Relationship.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 
     @Test
@@ -56,8 +56,8 @@ public class ClassFieldsAnnotationValidatorTest {
 
         DomainInfo domainInfo = new DomainInfo("org.neo4j.ogm.domain.incorrect.startendnodes");
         ClassInfo classInfo = domainInfo.getClass(org.neo4j.ogm.domain.incorrect.startendnodes.Relationship.class.getName());
-        ClassAnnotationValidator validator = new ClassAnnotationValidator(classInfo);
+        ClassAnnotationValidator validator = new ClassAnnotationValidator();
 
-        validator.validate();
+        validator.validate(classInfo);
     }
 }
