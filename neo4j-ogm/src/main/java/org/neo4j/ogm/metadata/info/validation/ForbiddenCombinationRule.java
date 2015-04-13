@@ -12,6 +12,7 @@ public class ForbiddenCombinationRule extends ValidationRule {
     public void validateClassAnnotations(Collection<String> annotationsNames) {
         if(this.getClassAnnotations() == null) {
             this.setAreClassAnnotationsValid(true);
+            return;
         }
 
         AnnotationValidatorHelper helper = new AnnotationValidatorHelper();

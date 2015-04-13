@@ -71,7 +71,7 @@ public class ClassAnnotationValidator implements AnnotationValidator {
     }
 
     private Collection<AnnotationInfo> getAnnotationsForAncestors(ClassInfo classInfo) {
-        Collection<AnnotationInfo> annotationInfos = new LinkedList<>();
+        Collection<AnnotationInfo> annotationInfos = new ArrayList<>();
 
         if (classInfo == null) {
             return annotationInfos;

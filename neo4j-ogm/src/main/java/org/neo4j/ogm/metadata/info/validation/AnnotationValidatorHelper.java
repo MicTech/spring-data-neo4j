@@ -17,18 +17,6 @@ public class AnnotationValidatorHelper {
         return fqns;
     }
 
-    public boolean areAnnotationsContains(Collection<String> annotationNames, Collection<String[]> combinations) {
-        for (String[] combination : combinations) {
-            boolean containsAll = areAnnotationsContains(annotationNames, combination);
-
-            if (containsAll) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public boolean areAnnotationsContains(Collection<String> annotationNames, String[] combination) {
         boolean containsOne = containsOne(annotationNames, combination);
 

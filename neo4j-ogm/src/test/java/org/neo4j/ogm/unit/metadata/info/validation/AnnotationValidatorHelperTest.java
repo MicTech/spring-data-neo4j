@@ -17,8 +17,7 @@ public class AnnotationValidatorHelperTest {
         annotationNames.add("EndNode");
         annotationNames.add("StartNode");
 
-        Collection<String[]> combinations = new ArrayList<>();
-        combinations.add(new String[] {"StartNode", "EndNode"});
+        String[] combinations = new String[] {"StartNode", "EndNode"};
 
         AnnotationValidatorHelper helper = new AnnotationValidatorHelper();
 
@@ -32,8 +31,7 @@ public class AnnotationValidatorHelperTest {
         Collection<String> annotationNames = new ArrayList<>();
         annotationNames.add("EndNode");
 
-        Collection<String[]> combinations = new ArrayList<>();
-        combinations.add(new String[] {"StartNode", "EndNode"});
+        String[] combinations = new String[] {"StartNode", "EndNode"};
 
         AnnotationValidatorHelper helper = new AnnotationValidatorHelper();
 

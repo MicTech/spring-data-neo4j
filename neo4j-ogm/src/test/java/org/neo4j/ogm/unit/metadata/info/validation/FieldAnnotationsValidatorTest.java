@@ -3,6 +3,7 @@ package org.neo4j.ogm.unit.metadata.info.validation;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.neo4j.ogm.annotation.Relationship;
 import org.neo4j.ogm.metadata.AnnotationsException;
 import org.neo4j.ogm.metadata.MetaData;
 import org.neo4j.ogm.metadata.info.ClassInfo;
